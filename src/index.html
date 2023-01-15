@@ -50,20 +50,16 @@
     <script src="./assets/vendor/bootstrap/js/popper.js"></script>
     <script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   <!--===============================================================================================-->
-    <script src="./assets/vendor/select2/select2.min.js"></script>
+    <script src="./assets/vendor/select2/select2.js"></script>
+    <script src="./assets/vendor/select2/initselect2.js"></script>
     <script>
-      $(".js-select2").each(function(){
-        $(this).select2({
-          minimumResultsForSearch: 20,
-          dropdownParent: $(this).next('.dropDownSelect2')
-        });
-      })
+      //incicia select 2
     </script>
   <!--===============================================================================================-->
     <script src="./assets/vendor/daterangepicker/moment.min.js"></script>
     <script src="./assets/vendor/daterangepicker/daterangepicker.js"></script>
   <!--===============================================================================================-->
-    <script src="./assets/vendor/slick/slick.min.js"></script>
+    <script src="./assets/vendor/slick/slick.js"></script>
     <script src="./assets/js/slick-custom.js"></script>
   <!--===============================================================================================-->
     <script src="./assets/vendor/parallax100/parallax100.js"></script>
@@ -71,21 +67,11 @@
           $('.parallax100').parallax100();
     </script>
   <!--===============================================================================================-->
-    <script src="./assets/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-    <script>
-      $('.gallery-lb').each(function() { // the containers for all your galleries
-        $(this).magnificPopup({
-              delegate: 'a', // the selector for gallery item
-              type: 'image',
-              gallery: {
-                enabled:true
-              },
-              mainClass: 'mfp-fade'
-          });
-      });
-    </script>
+    <script src="./assets/vendor/MagnificPopup/jquery.magnific-popup.js"></script>
+    <script src="./assets//vendor/MagnificPopup//initmagnific.js"></script>
   <!--===============================================================================================-->
     <script src="./assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="./assets/vendor/isotope/isotopeinit.js"></script>
   <!--===============================================================================================-->
     <script src="./assets/vendor/sweetalert/sweetalert.min.js"></script>
     <script>
@@ -126,6 +112,7 @@
     </script>
   <!--===============================================================================================-->
     <script src="./assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
     <script>
       $('.js-pscroll').each(function(){
         $(this).css('position','relative');
@@ -143,5 +130,7 @@
     </script>
   <!--===============================================================================================-->
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/initmodal.js"></script>
+
 </body>
 </html>

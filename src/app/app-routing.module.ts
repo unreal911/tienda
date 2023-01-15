@@ -7,7 +7,8 @@ import { NoagefoundComponent } from './noagefound/noagefound.component';
 import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
-  { path: '', component: InicioComponent },
+  { path: 'inicio', component: InicioComponent },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'shop', component: ShopComponent },
   { path: 'contactenos', component: ContactenosComponent },
   { path: 'carrito', component: CarritoComponent },
