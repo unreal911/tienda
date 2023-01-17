@@ -9,7 +9,7 @@ import { ContactenosComponent } from './contactenos/contactenos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { SharedModule } from './shared/shared.module';
 import { NoagefoundComponent } from './noagefound/noagefound.component';
-
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,8 @@ import { NoagefoundComponent } from './noagefound/noagefound.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
