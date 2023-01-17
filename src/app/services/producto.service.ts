@@ -25,4 +25,8 @@ export class ProductoService {
     const url = `${api_url}/busqueda/publico/coleccion/${coleccion}/${producto}`
     return this.http.get(url)
   }
+  productoId(id:string){
+    const url =`${api_url}/producto/id/${id}`
+    return this.http.get(url)
+  }
 }

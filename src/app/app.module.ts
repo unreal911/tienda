@@ -10,6 +10,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { SharedModule } from './shared/shared.module';
 import { NoagefoundComponent } from './noagefound/noagefound.component';
 import { HttpClientModule } from "@angular/common/http";
+import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { HttpClientModule } from "@angular/common/http";
     ShopComponent,
     ContactenosComponent,
     CarritoComponent,
-    NoagefoundComponent
+    NoagefoundComponent,
+    ProductoDetalleComponent
   ],
   imports: [
     BrowserModule,

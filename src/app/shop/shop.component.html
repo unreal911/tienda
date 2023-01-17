@@ -234,7 +234,9 @@
           <div class="block2-pic hov-img0">
             <img [src]="producto.img[0].url" alt="IMG-PRODUCT">
 
-            <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+            <a
+            [routerLink]="['/producto', producto.uid ]" routerLinkActive="router-link-active"
+           class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
               Quick View
             </a>
           </div>
