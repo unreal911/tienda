@@ -7,6 +7,7 @@ declare function select2principal(): any
 declare function initSelec2(): any
 declare function iniciarSlick3(): any
 declare function iniciarSlicksPrincipal(): any
+declare function iniciarWrapProduct():any
 declare var $: any
 @Component({
   selector: 'app-producto-detalle',
@@ -41,18 +42,22 @@ export class ProductoDetalleComponent implements OnInit {
     select2principal()
     initSelec2()
     iniciarSlicksPrincipal()
+    iniciarWrapProduct()
   }
   getProducto(id: any) {
     this.productoService.productoId(id).subscribe({
       next: (r: any) => {
         this.producto = r.producto
         this.imgProducto = r.producto.img
-
       },
       error: (e) => { console.log(e) },
       complete() {
 
       },
     })
+  }
+  agregarCarrito(cantidad:any){
+    console.log(cantidad)
+    console.log(this.producto.uid)
   }
 }
