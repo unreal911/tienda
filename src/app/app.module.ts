@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { NoagefoundComponent } from './noagefound/noagefound.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.co
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     SharedModule,
     HttpClientModule
   ],

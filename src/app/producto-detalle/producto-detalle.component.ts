@@ -7,7 +7,7 @@ declare function select2principal(): any
 declare function initSelec2(): any
 declare function iniciarSlick3(): any
 declare function iniciarSlicksPrincipal(): any
-declare function iniciarWrapProduct():any
+declare function iniciarWrapProduct(): any
 declare var $: any
 @Component({
   selector: 'app-producto-detalle',
@@ -17,6 +17,9 @@ declare var $: any
 export class ProductoDetalleComponent implements OnInit {
   public producto: any
   public imgProducto: any
+  public tallaActual: any
+  public ColorActual: any
+  public productoAgregado:any
   constructor(
 
     private productoService: ProductoService,
@@ -25,7 +28,14 @@ export class ProductoDetalleComponent implements OnInit {
     this.producto = { nombre: '', precio: 0 };
 
   }
-
+  changeTalla(valor: any) {
+    console.log('hola es talla')
+    this.tallaActual = valor
+  }
+  changeColor(valor: any) {
+    console.log('hola es color')
+    this.ColorActual = valor
+  }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       let id = params.get('id')
@@ -56,7 +66,7 @@ export class ProductoDetalleComponent implements OnInit {
       },
     })
   }
-  agregarCarrito(cantidad:any){
+  agregarCarrito(cantidad: any) {
     console.log(cantidad)
     console.log(this.producto.uid)
   }

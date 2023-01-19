@@ -45,14 +45,12 @@
               </div>
 
               <div class="size-204 respon6-next">
-                <div class="rs1-select2 bor8 bg0">
-                  <select class="js-select2" name="time">
-                    <option>Seleccione talla</option>
-                    <option>Talla S</option>
-                    <option>Talla M</option>
-                    <option>Talla L</option>
+                <div class=" bor8 bg0">
+
+                  <select class="form-control" name="time" (change)="changeTalla(valorTalla.value)" #valorTalla>
+                    <option disabled selected>Seleccione talla</option>
+                    <option *ngFor="let talla of producto.talla" [value]="talla">Talla {{talla}}</option>
                   </select>
-                  <div class="dropDownSelect2"></div>
                 </div>
               </div>
             </div>
@@ -63,15 +61,15 @@
               </div>
 
               <div class="size-204 respon6-next">
-                <div class="rs1-select2 bor8 bg0">
-                  <select class="js-select2" name="time">
-                    <option>Seleccione Talla</option>
-                    <option>Rojo</option>
-                    <option>Azul</option>
-                    <option>Blanco</option>
-                    <option>Plomo</option>
+                <div class="bor8 bg0">
+                  <select class="form-control" name="time" (change)="changeTalla(valorTalla.value)" #valorTalla>
+                    <option disabled selected>Seleccione talla</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="azul">Azul</option>
+                    <option value="blanco">Blanco</option>
+                    <option value="plomo">Plomo</option>
                   </select>
-                  <div class="dropDownSelect2"></div>
+
                 </div>
               </div>
             </div>
