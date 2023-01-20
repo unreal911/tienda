@@ -12,6 +12,9 @@ import { NoagefoundComponent } from './noagefound/noagefound.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

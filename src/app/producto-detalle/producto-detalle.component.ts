@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductoService } from '../services/producto.service';
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2'
 declare function magnificPrincipal(): any
 declare function initMagnific(): any
 declare function select2principal(): any
@@ -19,11 +21,12 @@ export class ProductoDetalleComponent implements OnInit {
   public imgProducto: any
   public tallaActual: any
   public ColorActual: any
-  public productoAgregado:any
+  public productoAgregado: any
   constructor(
 
     private productoService: ProductoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     this.producto = { nombre: '', precio: 0 };
 
@@ -67,7 +70,46 @@ export class ProductoDetalleComponent implements OnInit {
     })
   }
   agregarCarrito(cantidad: any) {
-    console.log(cantidad)
+    //this.toastr.success('Producto Agregado', 'Accion realiazada!!!');
+    //console.log(cantidad)
     console.log(this.producto.uid)
+    this.productoAgregado = {
+      uid: this.producto.uid,
+      nombre:this.producto.nombre,
+      precio: this.producto.precio,
+      color: this.ColorActual,
+      talla: this.tallaActual,
+      cantidad: parseInt(cantidad) ,
+      img:this.producto.img[0]
+    }
+    if(this.productoAgregado.talla == undefined ){
+      Swal.fire({
+        position: 'center',
+        icon: 'info',
+        title: 'Seleccione una talla primero',
+        showConfirmButton: false,
+        timer: 1000
+      })
+      return;
+    }
+    if(this.productoAgregado.color == undefined){
+      Swal.fire({
+        position: 'center',
+        icon: 'info',
+        title: 'Seleccione un color primero',
+        showConfirmButton: false,
+        timer: 1000
+      })
+      console.log(this.producto)
+      return;
+    }
+    this.productoService.agreagarProductoCarrito(this.productoAgregado)
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto agregado',
+      showConfirmButton: false,
+      timer: 1000
+    })
   }
 }
