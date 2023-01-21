@@ -7,13 +7,13 @@ import { ProductoService } from 'src/app/services/producto.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public cantidad = 0
+  public xcantidad = 0
   constructor(private productoService:ProductoService) { }
 
   ngOnInit(): void {
-    this.productoService.cantidadCarrito.subscribe((cantidad) => {
-      this.cantidad = cantidad;
-      console.log(cantidad)
+    this.productoService.cantidadCarrito.subscribe((xcantidad) => {
+      this.xcantidad = xcantidad;
+      console.log(xcantidad)
     });
   }
 

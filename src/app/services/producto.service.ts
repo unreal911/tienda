@@ -14,10 +14,6 @@ export class ProductoService {
   }
 
   agreagarProductoCarrito(producto: any) {
-    //console.log(producto.cantidad)
-    if (this.carrito.length == 0) {
-      this.carrito.push(producto)
-    }
     let item = this.carrito.find(x => x.uid == producto.uid && x.talla == producto.talla && x.color == producto.color);
     if (item) {
       item.cantidad += producto.cantidad;
@@ -26,7 +22,7 @@ export class ProductoService {
     }
     console.log(this.carrito)
     this.cantidadCarrito.emit(this.carrito.length);
-    this.CarritoCart.emit(this.carrito);
+    this.CarritoCart.emit(this.carrito.slice());
 
   }
   ListarCaregorias(desde: number, limite: number) {
