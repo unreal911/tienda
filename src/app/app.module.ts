@@ -11,7 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { NoagefoundComponent } from './noagefound/noagefound.component';
 import { HttpClientModule } from "@angular/common/http";
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -29,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
