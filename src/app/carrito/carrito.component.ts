@@ -62,7 +62,8 @@ export class CarritoComponent implements OnInit {
       return;
     }
     this.formularioPedido.value.Total = this.total
-    this.formularioPedido.value.estado='NoAtendida'
+    this.formularioPedido.value.estado = 'NoAtendida'
+    this.formularioPedido.value.tipoventa = 'VentaWeb'
     this.pedidoService.crearPedido(this.formularioPedido.value).subscribe({
       next: (r: any) => {
         console.log(r)
@@ -71,6 +72,7 @@ export class CarritoComponent implements OnInit {
             pedido: r.pedido.uid,
             producto: this.carrito[i].uid,
             talla: this.carrito[i].talla,
+            color: this.carrito[i].color,
             cantidad: this.carrito[i].cantidad,
             img: this.carrito[i].img.url
           }).subscribe({
