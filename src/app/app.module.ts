@@ -15,6 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { CategoriasComponent } from './complementos/categorias/categorias.component';
+import { ListBlogComponent } from './complementos/list-blog/list-blog.component';
+import { BlogComponent } from './blog/blog.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { ToastrModule } from 'ngx-toastr';
     ContactenosComponent,
     CarritoComponent,
     NoagefoundComponent,
-    ProductoDetalleComponent
+    ProductoDetalleComponent,
+    CategoriasComponent,
+    ListBlogComponent,
+    BlogComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,

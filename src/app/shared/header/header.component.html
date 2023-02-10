@@ -6,35 +6,23 @@
 
         <!-- Logo desktop -->
         <a href="#" class="logo">
-          <img src="https://res.cloudinary.com/dxku7espu/image/upload/v1674074503/producto/tsz30hqvmosrfdfhqoey.jpg"
-            alt="IMG-LOGO">
+          <img src="./assets/images/image.png" alt="IMG-LOGO">
         </a>
 
         <!-- Menu desktop -->
         <div class="menu-desktop">
           <ul class="main-menu">
-            <li class="active-menu">
-              <a [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
+            <li  routerLinkActive="active-menu" >
+              <a [routerLink]="['/']" >Home</a>
             </li>
-
-            <li>
-              <a [routerLink]="['/shop']" routerLinkActive="router-link-active">Shop</a>
+            <li routerLinkActive="active-menu" >
+              <a [routerLink]="['/shop']" >Shop</a>
             </li>
-
-            <li class="label1" data-label1="hot">
-              <a href="shoping-cart.html">Features</a>
+            <li routerLinkActive="active-menu" >
+              <a [routerLink]="['/nosotros']" >Nosotros</a>
             </li>
-
-            <li>
-              <a href="blog.html">Blog</a>
-            </li>
-
-            <li>
-              <a href="about.html">About</a>
-            </li>
-
-            <li>
-              <a href="contact.html">Contact</a>
+            <li routerLinkActive="active-menu" >
+              <a  [routerLink]="['/contactenos']">Contactenos</a>
             </li>
           </ul>
         </div>

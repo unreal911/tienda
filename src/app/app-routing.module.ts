@@ -4,6 +4,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { ContactenosComponent } from './contactenos/contactenos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NoagefoundComponent } from './noagefound/noagefound.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 import { ProductoDetalleComponent } from './producto-detalle/producto-detalle.component';
 import { ShopComponent } from './shop/shop.component';
 
@@ -14,7 +15,11 @@ const routes: Routes = [
   { path: 'contactenos', component: ContactenosComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'producto/:id', component: ProductoDetalleComponent },
+  { path: 'nosotros', component: NosotrosComponent },
+  { path: 'contactenos', component: ContactenosComponent },
   { path: '**', component: NoagefoundComponent },
+
+
 
 ];
 
