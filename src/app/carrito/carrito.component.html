@@ -14,9 +14,9 @@
                 <th class="column-5">Total</th>
               </tr>
               <tr class="table_row" *ngFor="let item of carrito;let i=index">
-                <td class="column-1">
+                <td class="column-1" (click)="eliminarFilaCarrito(i)">
                   <div class="how-itemcart1">
-                    <img [src]="item.img.url" alt="IMG">
+                    <img [src]="item.img.url" alt="IMG" >
                   </div>
                 </td>
                 <td class="column-2">{{item.nombre}}</td>
@@ -48,7 +48,6 @@
           <h4 class="mtext-109 cl2 p-b-30">
             Cart Totals
           </h4>
-
           <div class="flex-w flex-t bor12 p-b-13">
             <div class="size-208">
               <span class="stext-110 cl2">

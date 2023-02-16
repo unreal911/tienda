@@ -10,9 +10,15 @@ export class ProductoService {
   public carrito: carrito[] = []
   public cantidadCarrito = new EventEmitter<number>();
   public CarritoCart = new EventEmitter<carrito[]>();
+  public precioTotal = new EventEmitter<number>()
+  public total: number = 0
   constructor(private http: HttpClient) {
   }
-
+  eliminarFila(i:number){
+    this.carrito.splice(i,1)
+    console.log(this.carrito)
+    this.CarritoCart.emit(this.carrito.slice());
+  }
   agreagarProductoCarrito(producto: any) {
     let item = this.carrito.find(x => x.uid == producto.uid && x.talla == producto.talla && x.color == producto.color);
     if (item) {
@@ -23,7 +29,14 @@ export class ProductoService {
     console.log(this.carrito)
     this.cantidadCarrito.emit(this.carrito.length);
     this.CarritoCart.emit(this.carrito.slice());
-
+    this.calcularTotal()
+    this.precioTotal.emit(this.total)
+  }
+  calcularTotal() {
+    console.log()
+    this.total = this.carrito.reduce((acumulador, producto) => {//que hace el reduce ver
+      return acumulador + (producto.precio * producto.cantidad);
+    }, 0);
   }
   ListarCaregorias(desde: number, limite: number) {
     const url = `${api_url}/categoria/listarPublico/${desde}/${limite}`

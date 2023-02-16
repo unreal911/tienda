@@ -16,7 +16,7 @@
     </div>
     <div class="header-cart-content flex-w js-pscroll">
       <ul class="header-cart-wrapitem w-full">
-        <li class="header-cart-item flex-w flex-t m-b-12" *ngFor="let item of carrito">
+        <li class="header-cart-item flex-w flex-t m-b-12" *ngFor="let item of carrito ;let i=index" (click)="eliminarFilaCarrito(i)">
           <div class="header-cart-item-img">
             <img [src]="item.img.url" alt="IMG">
           </div>
@@ -35,7 +35,7 @@
 
       <div class="w-full">
         <div class="header-cart-total w-full p-tb-40">
-          Total: $75.00
+           S/. {{total}}
         </div>
 
         <div class="header-cart-buttons flex-w w-full">

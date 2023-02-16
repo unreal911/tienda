@@ -102,6 +102,10 @@ export class CarritoComponent implements OnInit {
     }, 300);
 
   }
+  eliminarFilaCarrito(i:number){
+    this.productoService.eliminarFila(i)
+    console.log('Click')
+  }
   ctrCantidad(valor: number, i: number) {
 
 
