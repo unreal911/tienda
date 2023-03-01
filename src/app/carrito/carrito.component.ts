@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { carrito } from '../interfaces/carrito';
 import { ProductoService } from '../services/producto.service';
-import * as QRCode from 'qrcode';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { PedidosService } from '../services/pedidos.service';
+import { ActivatedRoute, Router } from '@angular/router';
 declare function magnificPrincipal(): any
 declare function initMagnific(): any
 declare function iniciarSlicksPrincipal(): any
@@ -19,6 +19,7 @@ export class CarritoComponent implements OnInit {
   public cantidadCarrito: number[] = []
   public total: number = 0
   public formularioPedido: any
+
   @ViewChild('qrcode', { static: true }) qrcode: any;
   phoneNumber = '980904787';
   amount = '10';
@@ -26,24 +27,9 @@ export class CarritoComponent implements OnInit {
   constructor(
     public productoService: ProductoService,
     public pedidoService: PedidosService,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private route:Router
   ) { }
-
-
-
-
-  generateQRCode() {
-    //aun falta pullir
-    console.log('Hola')
-    const canvas = document.createElement('canvas');
-    QRCode.toCanvas(canvas, '0002010102113944RtukSqn/TbaeE57pkKi1bt7p/6BWUxxIVo8bp2XIZxI=5204561153036045802PE5906YAPERO6004Lima6304F9A2', { errorCorrectionLevel: 'H' },
-      (error: any) => {
-        console.log(error)
-        if (error) console.error(error);
-        console.log('success!');
-      });
-    this.qrcode.nativeElement.appendChild(canvas);
-  }
   validarCampo(nombre: string) {
     console.log()
     if (this.formularioPedido.get(nombre)?.pristine == false && this.formularioPedido.get(nombre).value == '') {
@@ -80,6 +66,8 @@ export class CarritoComponent implements OnInit {
             error: (e) => { console.log(e) }
           })
         }
+          this.carrito=[]
+          this.route.navigateByUrl('/shop')
       },
       error: (e) => { console.log(e) },
       complete() {
@@ -93,22 +81,20 @@ export class CarritoComponent implements OnInit {
       telefono: ['', [Validators.required]],
       departamento: ['', [Validators.required]],
       correo: ['', [Validators.required]],
-      direccion: ['', [Validators.required]]
+      direccion: ['', [Validators.required]],
+      fecha:[new Date()]
     })
     this.carrito = this.productoService.carrito
     this.calcularTotal();
     setTimeout(() => {
       this.iniciarScripts()
     }, 300);
-
   }
   eliminarFilaCarrito(i:number){
     this.productoService.eliminarFila(i)
     console.log('Click')
   }
   ctrCantidad(valor: number, i: number) {
-
-
     let item = Object.assign({}, this.carrito[i]);
     item.cantidad += valor;
     if (item.cantidad <= 0) {
@@ -135,5 +121,4 @@ export class CarritoComponent implements OnInit {
     iniciarSlicksPrincipal()
     iniciarWrapProduct()
   }
-
 }
