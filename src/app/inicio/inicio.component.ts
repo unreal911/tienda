@@ -17,7 +17,7 @@ export class InicioComponent implements OnInit {
     this.listarSlids()
     setTimeout(() => {
       iniciarSlicks()
-    }, 500);
+    }, 1000);
   }
   listarSlids() {
     this.sliderServices.listarSliders().subscribe({

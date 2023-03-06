@@ -47,7 +47,7 @@ export class ProductoDetalleComponent implements OnInit {
     this.iniciarScripts()
     setTimeout(() => {
       iniciarSlick3()
-    }, 500);
+    }, 1000);
   }
   iniciarScripts() {
     magnificPrincipal()
