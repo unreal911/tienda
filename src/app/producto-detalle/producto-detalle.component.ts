@@ -61,6 +61,8 @@ export class ProductoDetalleComponent implements OnInit {
     this.productoService.productoId(id).subscribe({
       next: (r: any) => {
         this.producto = r.producto
+
+        document.getElementById("cadenadesc")!.innerHTML = this.producto.descripcion;
         this.imgProducto = r.producto.img
       },
       error: (e) => { console.log(e) },
